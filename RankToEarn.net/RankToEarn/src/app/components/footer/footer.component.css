@@ -1,0 +1,59 @@
+@import url(//db.onlinewebfonts.com/c/f2ecc6ef740fcf60de095b0b087dd58d?family=OCR+A+Extended);
+
+.container-f {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.content-f {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+
+}
+
+.logo {
+    height: 100%;
+    
+   
+
+}
+
+.company {
+    height: 90%;
+    text-align: center;
+    
+    padding: 1em;
+   
+
+}
+
+.support {
+    height: 90%;
+    text-align: center;
+    
+    padding: 1em;
+   
+}
+
+.socials {
+    height: 90%;
+    text-align: center;
+    
+    padding: 1em;
+   
+}
+
+.image {
+
+    height: 100%;
+}
+
+.text {
+    margin-top: -4.2em;
+    padding-left: 4.4em;
+    font-family: 'OCR A Extended';
+
+}

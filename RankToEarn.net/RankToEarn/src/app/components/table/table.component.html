@@ -1,0 +1,109 @@
+<div class="tabdiv">
+    <div class="filter" style="font-size: 13px">
+        <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input (keyup)="applyFilter($event)" matInput matPlaceholder="Filter" #input>
+        </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="dataSource" matSort matSortChange class="tableclass mat-elevation-z3">
+        <ng-container matColumnDef="rank">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef sortActionDescription="Sort by name"> # </th>
+            <td mat-cell *matCellDef="let element; let i=index" > <span class="index-style">{{((this.page-1) * 50) + (1+i)}}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="thumbnail">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> <img class="mat-elevation-z3" [src]="element.img_path" > </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Project </th>
+            <td mat-cell *matCellDef="let element" (click)="goToProfilePage(element.route)"> <button mat-flat-button class="name-style">{{element.name}}</button> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="socials">
+            <th mat-header-cell *matHeaderCellDef class="socials-header"> Socials </th>
+            <td mat-cell *matCellDef="let element">
+                <button class="social-btn" *ngIf="element.socials.twitter != 'none'">
+                    <a [href]="element.socials.twitter"><img class="social-icon" src="https://toppng.com/uploads/preview/line-clipart-computer-icons-social-media-facebook-small-transparent-background-twitter-ico-11562914414jbo8db7bj4.png"></a>
+                </button>
+                <button class="social-btn" *ngIf="element.socials.discord != 'none'">
+                    <a [href]="element.socials.discord"><img class="social-icon" src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-icone.png"></a>
+                </button>
+                <button class="social-btn" *ngIf="element.socials.home_page != 'none'">
+                    <a [href]="element.socials.home_page"><img class="social-icon" src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"></a>
+                </button>
+            </td>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="size">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortBySize('size')" sortActionDescription="Sort by number">Discord</th>
+            
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.size > -99"  class="data-style">{{element.size}}</span>
+                <span *ngIf="element.size <= -99" class="data-style">--</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="weekly">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortByWeekly('weekly')" sortActionDescription="Sort by number">Discord 7d</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.weekly > -99"  class="data-style">{{element.weekly}}%</span>
+                <span *ngIf="element.weekly <= -99" class="data-style">--</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="monthly">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortByMonthly('monthly')" sortActionDescription="Sort by number">Discord 1M</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.monthly > -99"  class="data-style">{{element.monthly}}%</span>
+                <span *ngIf="element.monthly <= -99" class="data-style">--</span>
+            </td>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="followers">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortByFollowers('followers')" sortActionDescription="Sort by number">Twitter Followers</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.followers > 100" class="data-style">{{element.followers}}</span>
+                <span *ngIf="element.followers <= 100" class="data-style">--</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="f_weekly">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortBy_F_Weekly('f_weekly')" sortActionDescription="Sort by number">Twitter 7d</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.f_weekly > -99"  class="data-style">{{element.f_weekly}}%</span>
+                <span *ngIf="element.f_weekly <= -99"  class="data-style">--</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="f_monthly">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header (click)="sortBy_F_Monthly('f_monthly')" sortActionDescription="Sort by number">Twitter 1M</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.f_monthly > -99" class="data-style">{{element.f_monthly}}%</span>
+                <span *ngIf="element.f_monthly <= -99" class="data-style">--</span>
+            </td>
+        </ng-container>
+
+        
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="table-head mat-elevation-z4"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+
+
+    </table>
+    
+    
+</div>
+
+<app-navbar (getPage)="getPage($event)" [num_pages]="num_pages" [current_page]="page"></app-navbar>
+
+
+
+<p>Pagina:{{page}}</p>

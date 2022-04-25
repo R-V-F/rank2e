@@ -1,0 +1,17 @@
+.container-h {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.content-h {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+}
+
+.image {
+    
+    margin-left: -3.7em;
+    margin-top: -3.0em;
+}
+

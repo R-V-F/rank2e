@@ -1,0 +1,44 @@
+
+declare @farm_tables1 as varchar(220)
+declare @farm_tables2 as varchar(220)
+declare @id_count as int
+declare @farm_assembly as varchar(240)
+declare @mem_count as int
+declare @mem_count_test as int
+declare @setup1 as varchar(220)
+declare @setup2 as varchar(220)
+declare @full_thing as varchar(220)
+declare @full_thing2 as varchar(220)
+declare @full_assembly as varchar(320)
+declare @setup2_2 as varchar(220)
+declare @setup0 as varchar(190)
+declare @setup3 as varchar(190)
+declare @setup3_0 as varchar(190)
+declare @farm_assembly2 as varchar(320)
+declare @test as varchar(320)
+
+set @setup1 = 'declare @p as int declare @mem_count as int set @mem_count = ('
+set @setup2 = ')insert into dbo.test_table_go (pair_id, members)'
+set @setup3 = ', @mem_count) '
+set @setup3_0 = ' values('
+set @setup2_2 = ') print (@mem_count)'
+
+set @farm_tables1 = 'SELECT Members FROM dbo.table_'
+set @farm_tables2 = ' ORDER BY [DATE] DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY'
+set @id_count = 3
+set @farm_assembly = CONCAT(@setup1,@farm_tables1,@id_count, @farm_tables2,@setup2, @setup3_0, @id_count, @setup3)
+set @farm_assembly2 = CONCAT(@setup1,@farm_tables1,@id_count, @farm_tables2,@setup2_2)
+--execute (@farm_assembly )
+print @farm_assembly
+
+DECLARE @i INTEGER;
+SET @i = 1;
+ 
+WHILE @i <= 338
+BEGIN
+	set @id_count = @i
+	set @farm_assembly = CONCAT(@setup1,@farm_tables1,@id_count, @farm_tables2,@setup2, @setup3_0, @id_count, @setup3)
+	execute (@farm_assembly )
+	print(@farm_assembly)
+	set @i = @i + 1;
+END;

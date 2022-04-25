@@ -1,0 +1,180 @@
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+  }
+.testdiv {
+    display: block;
+
+}
+
+.tabdiv {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+
+    
+
+}
+
+.tableclass {
+
+    margin-left:1%;
+    margin-bottom:1%;
+    width:98%;
+    border: 0px solid;
+
+
+    background-color: rgb(255, 255, 255);
+
+}
+
+.filter {
+    margin-left: 1%;
+    margin-right: 80%;
+    margin-top: 0px;
+    
+    height: 3.3em;
+
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+.mat-column-name {
+    width: 33%;
+    
+    text-align: center;
+    
+    
+    
+
+}
+.mat-column-size {
+    width: 8em;
+    text-align: center;
+}
+.mat-column-weekly {
+   width: 8em;
+   text-align: center;
+   
+
+}
+.mat-column-monthly {
+    width: 8em;
+    text-align: center;
+    
+ 
+ }
+
+.mat-column-rank {
+
+    text-align:left;
+    justify-content: left;
+    padding-right: 10px;
+    width: 2em;
+    
+    
+ }
+
+ .mat-column-followers {
+    width: 8em;
+    text-align: center;
+    
+ 
+ }
+
+ .mat-column-f_weekly {
+    width: 8em;
+    text-align: center;
+    
+ 
+ }
+
+ .mat-column-f_monthly {
+    width: fit-content;
+    text-align: center;
+    
+ 
+ }
+
+ .mat-column-socials {
+     padding: 0px;
+     margin: 0px;
+     width: 10%;
+
+     text-align: center;
+ }
+
+
+.mat-header-row {
+
+    
+    background-color: rgb(241, 248, 255);
+    height: 2.5em;
+
+}
+
+th.mat-header-cell {
+    border-bottom: 2px solid #ffa600;
+    border-top: 2px solid #ffa600;
+    font-weight: 900;
+
+    background-color: rgb(244, 248, 252);
+    height: 2.5em;
+    padding-left: 10px;
+} 
+th.mat-header-cell.socials-header {
+
+    padding-right: 8px;
+
+}
+
+
+
+
+:host ::ng-deep .mat-sort-header-container {
+    display: flex;
+    justify-content:center;
+ }
+
+.name-style {
+    color:#428ac8;
+}
+
+.index-style {
+    font-weight: 590;
+    color:#636262;
+}
+.data-style {    
+    color:#5f656f;
+    font-weight: bold;
+}
+
+img {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    width: 50px; 
+    height: 50px;
+    border-radius: 8px;
+}
+
+.social-icon {
+    height: 20px;
+    width: 20px;
+    margin:0px;
+    padding: 0px;    
+}
+
+.social-btn {
+    height: 23px;
+    width: 23px;
+    margin:0px;
+    padding: 0px;
+    margin: 2.5px;
+    border:0px;
+    background-color: white;
+}

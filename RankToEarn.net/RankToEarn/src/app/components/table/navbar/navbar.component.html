@@ -1,0 +1,18 @@
+
+<div class="buttons">
+    <!-- <button (click)="emitPage(page_actv-1)" [disabled]="isFirst()" ><span>&#60;</span></button> -->
+    <li *ngFor="let e of [].constructor(num_pages); let i = index">
+        <button mat-stroked-button (click)="emitPage(i+1)" [id]="'but'+(i+1)" [disabled]="isCurrent(i+1)" class="mat-elevation-z3">{{i+1}}</button>
+    </li>
+    <!-- <button (click)="emitPage(page_actv-1)" [disabled]="isLast()"><span>&#62;</span></button> -->
+</div>
+
+
+
+
+
+<p>num_pages = {{num_pages}} </p>
+
+<button (click)="emitPage(6)">page 6</button>
+<button (click)="emitPage(1)">page 1</button>
+<button (click)="emitPage(2)">page 2</button>

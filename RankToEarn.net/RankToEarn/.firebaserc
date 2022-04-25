@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "rank2earn"
+  },
+  "targets": {
+    "rank2earn": {
+      "hosting": {
+        "RankToEarn": [
+          "rank2earn"
+        ]
+      }
+    }
+  }
+}

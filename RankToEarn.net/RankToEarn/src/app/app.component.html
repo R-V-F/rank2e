@@ -1,0 +1,63 @@
+
+<div class="container">
+
+  <header class="mat-elevation-z5">
+    <app-header></app-header>
+  </header>
+
+  <aside>
+
+    <div class="title">
+      <h2>Top 3 Discords</h2>
+    </div>
+
+    <div class="aside-cards">
+
+      <div class="card1 mat-elevation-z3">
+        <app-graph name="Axie Infinity"></app-graph>
+      </div>
+
+      <div class="card2 mat-elevation-z3">
+        <app-graph name="Big Time"></app-graph>
+      </div>
+
+      <div class="card3 mat-elevation-z3">
+        <app-graph name="The Sandbox"></app-graph>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+   
+  <footer class="mat-elevation-z6">
+    <app-footer></app-footer>
+  </footer>
+</div>
+
+
+
+
+
+<!-- 
+<div class="profile-container" *ngIf="isProfilePage">
+
+  <header class="mat-elevation-z8">
+    <app-header></app-header>
+  </header>
+
+  <main class="">
+    <app-page [input_id]="page_id"></app-page>
+  </main>
+   
+  <footer class="mat-elevation-z6">
+    <app-footer></app-footer>
+  </footer>
+</div>
+ -->
+
+
