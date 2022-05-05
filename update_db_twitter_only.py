@@ -54,9 +54,9 @@ url_list = df['proj_twitter_url'].tolist()
 id_list = df['pair_ID'].tolist()
 
 now = datetime.now()
-date_time = now.strftime("%m/%d/%Y")
-##yesterday = datetime.today() - timedelta(days=1)
-##date_time = yesterday.strftime("%m/%d/%Y")
+##date_time = now.strftime("%m/%d/%Y")
+yesterday = datetime.today() - timedelta(days=3)
+date_time = yesterday.strftime("%m/%d/%Y")
 #### ^^^^ in desperate times (i fuk up)
 
 #adding sleep time so the requests dont get my ip banned

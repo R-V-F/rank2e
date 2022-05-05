@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
-import datajson from './json_data_updated.json';
+import datajson from './json_data_appended.json';
 import { ActivatedRoute, Router, RoutesRecognized } from '@angular/router';
 import Chart from 'chart.js/auto';
 import { Subscription } from 'rxjs';
