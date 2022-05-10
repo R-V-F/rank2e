@@ -90,7 +90,7 @@ for id_ in id_list:
 
 
 
-print(json.dumps(assemble, indent=4))
+#print(json.dumps(assemble, indent=4))
 assemble_mid = json.dumps(assemble)
 
 assemble_go = json.loads(assemble_mid)

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
-import datajson from './json_data_appended.json';
+import datajson from './json_data_appended_and_sorted.json';
 
 @Component({
   selector: 'app-graph',

@@ -117,7 +117,7 @@ for table in data['tables']:
 
 
 new_json = json.dumps(data)
-with open('json_data_updated.json','w') as outfile:
+with open('json_data_appended.json','w') as outfile:
     outfile.write(new_json)
 
 

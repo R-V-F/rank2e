@@ -13,7 +13,7 @@
 
         <ng-container matColumnDef="thumbnail">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element"> <img class="mat-elevation-z3" [src]="element.img_path" > </td>
+            <td mat-cell *matCellDef="let element"> <img class="project-icon mat-elevation-z3" [src]="element.img_path" > </td>
         </ng-container>
 
         <ng-container matColumnDef="name">
@@ -25,10 +25,10 @@
             <th mat-header-cell *matHeaderCellDef class="socials-header"> Socials </th>
             <td mat-cell *matCellDef="let element">
                 <button class="social-btn" *ngIf="element.socials.twitter != 'none'">
-                    <a [href]="element.socials.twitter"><img class="social-icon" src="https://toppng.com/uploads/preview/line-clipart-computer-icons-social-media-facebook-small-transparent-background-twitter-ico-11562914414jbo8db7bj4.png"></a>
+                    <a [href]="element.socials.twitter"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
                 </button>
                 <button class="social-btn" *ngIf="element.socials.discord != 'none'">
-                    <a [href]="element.socials.discord"><img class="social-icon" src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-icone.png"></a>
+                    <a [href]="element.socials.discord"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"></a>
                 </button>
                 <button class="social-btn" *ngIf="element.socials.home_page != 'none'">
                     <a [href]="element.socials.home_page"><img class="social-icon" src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"></a>
@@ -106,4 +106,3 @@
 
 
 
-<p>Pagina:{{page}}</p>

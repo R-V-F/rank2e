@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
-import datajson from './json_data_appended.json';
+import datajson from './json_data_appended_and_sorted.json';
 
 import {MatTableDataSource} from '@angular/material/table';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
@@ -30,7 +30,7 @@ export class TableComponent implements OnInit, OnDestroy {
   dataSource_page:any = [];
   page_tables:any = []; // ** [[50 items],[50 items],[50 items],[50 items]...]
   page: number;
-  num_pages = 17;
+  num_pages = 17; /** To Do: calculate this dinamically */
   sortBy: any;
   subscription1: Subscription;
   subscription2: Subscription;
@@ -40,7 +40,9 @@ export class TableComponent implements OnInit, OnDestroy {
 
 
 
-
+  /** Variables to handle sorting.
+   *  It's whacky, change this later.
+   */
 
   sort_states = ['none','asc','dsc'];
   sort_state_weekly = 0;
@@ -51,12 +53,17 @@ export class TableComponent implements OnInit, OnDestroy {
   sort_state_f_monthly = 0;
   
 
-
   constructor(
         private _liveAnnouncer: LiveAnnouncer,
         private route:ActivatedRoute,
         private router:Router
   ){
+    /**
+     *  Since dumping everything at once on the table was taking a huge toll on the site performance,
+     *  the table is loading only what's been displeyed.
+     *  The following steps separetes the json_data content into 'buckets' of 50 items. Then, when the user
+     *  changes page, the page var is updated and the correct 'bucket' is loaded. 
+     */
 
     
     for (let i=0 ; i < this.n_tables ;i++) {
@@ -159,10 +166,18 @@ export class TableComponent implements OnInit, OnDestroy {
       
     } //sorted dataSource2 by dicord size
 
-   
+    /** Push only 50 items to the front page table.
+     *  This is done so the table don't load everything at once,
+     *  avoinding the toll on performance.
+     */
     for (let i=0 ; i < 50 ;i++) {
       this.dataSource_page.push(this.dataSource2[i]);
     }
+
+    /** Create a list of lists(size 50):
+     *    The index of the inner list represents the content of the table in a given page.
+     *    Ex: page_tables[2] <- table content of page 3 
+     */
 
     let single_page = [];
 
@@ -272,8 +287,6 @@ export class TableComponent implements OnInit, OnDestroy {
 
 
   }
-
-
 
 
   dataSource = new MatTableDataSource(this.dataSource_page);

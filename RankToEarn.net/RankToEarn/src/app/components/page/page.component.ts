@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
-import datajson from './json_data_appended.json';
+import datajson from './json_data_appended_and_sorted.json';
 import { ActivatedRoute, Router, RoutesRecognized } from '@angular/router';
 import Chart from 'chart.js/auto';
 import { Subscription } from 'rxjs';
@@ -12,31 +12,48 @@ import { GetRanksService } from 'src/app/service/get-ranks.service';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
-export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class PageComponent implements OnInit, OnDestroy {
 
-  id:number;
-  project_name:string;
-  opt:number;
-  thumbnail_path:string;
-  @Input() input_id:number;
-  position:number;
+  
+  /** Used to get the id from route */
+
   subscription:Subscription;
+
+  /** Used to handle the Charts */
+
   plugged_Discord:any;
   plugged_Twitter:any;
-  aux_set:any[];
+
+  /** General project properties */
+
   socials:any;
   name:string;
+  img_array = ['none'];
+  id:number;
+  project_name:string;
+  thumbnail_path:string;
+  position:number;
 
-  grade_array_4 = [0,0,0,0];
-  grade_array_5 = [0,0,0,0,0];
+  /** Whacky placehodler for growth/engagement scores */
+
+  grade_array_4:any = [0,0,0,0];
+  grade_array_5:any = [0,0,0,0,0];
   
-  disc_rank:any;
-  disc_growth_rank:any;
-  twitter_rank:any;
-  twitter_growth_rank:any;
+  /** Receivers of get-ranks.service */
 
   rank_discord_returns:any[];
   rank_twitter_returns:any[];
+
+  /** Index for the main gallery photo */
+
+  ind_center:number;
+
+  /** Appended info */
+
+  blockchains:string;
+  devices:string;
+  genres:string;
+
 
   constructor(
     private route:ActivatedRoute,
@@ -52,20 +69,15 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
       this.rank_discord_returns = get_ranks.getRankDiscord(this.id);
       // for(let i = 0; i < this.rank_discord_returns.length; i++) console.log('page stats',this.rank_discord_returns[i]);
       this.rank_twitter_returns = get_ranks.getRankTwitter(this.id);
+      //console.log('rank_twitter_returns[2]:', this.rank_twitter_returns[2]);
       // for(let i = 0; i < this.rank_discord_returns.length; i++) console.log('page stats',this.rank_twitter_returns[i]);\
       this.name = get_ranks.getName();
-
     });
-
-
     
-
-
 
     }
 
   ngOnInit(): void {
-  
   
     for(let i = 0; i < datajson.tables.length; i++) {
       if(datajson.tables[i].id == this.id) {
@@ -73,6 +85,10 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
         break;
       }
     }
+
+    this.blockchains = datajson.tables[this.position].blockchains;
+    this.devices = datajson.tables[this.position].devices;
+    this.genres = datajson.tables[this.position].genres;
   
     if(!(typeof this.id === 'undefined')) {
       if(this.plugged_Discord && this.plugged_Twitter) {
@@ -91,14 +107,9 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.socials = datajson.tables[this.position].socials;
-
-
-
-
-  }
-
-  ngAfterViewInit(): void {
     
+    
+    this.plugGallery(this.position);
   }
 
   ngOnDestroy(): void {
@@ -246,13 +257,60 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     
   });
+  }
 
+  plugGallery(position:number) {
+    let folder_path = "\\assets\\img\\" + datajson.tables[position].name;
+    let check = true;
+    let i = 0;
+    var xhr = new XMLHttpRequest();
+    this.img_array.pop();
+    
+
+    while(check == true) {
+      let img_path = folder_path + "\\" + i.toString() + ".png";
+      xhr.open('HEAD', img_path, false);
+      xhr.send();
+      if (xhr.status == 404) {
+          console.log('no photo in this path:',img_path);
+          break;
+      } else {
+          console.log('web_page found');
+          this.img_array.push(img_path);
+      }  
+      i++;
+    }
+    xhr.open('HEAD', folder_path + "\\web_page.png", false);
+    xhr.send();
+     
+    if (xhr.status == 404) {
+        console.log('no web_page');
+    } else {
+        console.log('web_page found:', folder_path + "\\web_page.png");
+        console.log(this.img_array);
+        this.img_array.push(folder_path + "\\web_page.png");
+    }
+
+    console.log('checking img_array:',this.img_array);
+    this.ind_center = 0;
+    // this.ind_left = this.img_array.length - 1;
+    // this.ind_right = 1;
 
 
 
   }
-
-
-
+  changePhoto(side:number) {
+    if(side == -1 && this.ind_center == 0) {
+      this.ind_center = this.img_array.length-1;
+    }
+    else {
+      // this.ind_left = (this.ind_left+side) % this.img_array.length;
+      // this.ind_right =  (this.ind_right+side) % this.img_array.length;
+      this.ind_center = (this.ind_center+side) % this.img_array.length;
+    }
+    //console.log(this.img_array[this.ind_center]);
+  }
+  
 
 }
+

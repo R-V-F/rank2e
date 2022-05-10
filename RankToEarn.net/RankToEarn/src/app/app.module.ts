@@ -25,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/table/navbar/navbar.component';
 import { PageComponent } from './components/page/page.component';
+import { GalleryComponent } from './components/page/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PageComponent } from './components/page/page.component';
     HeaderComponent,
     NavbarComponent,
     PageComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,

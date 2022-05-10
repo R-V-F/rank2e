@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import datajson from './json_data_appended.json';
+import datajson from './json_data_appended_and_sorted.json';
 
 
 @Injectable({
@@ -27,9 +27,10 @@ export class GetRanksService {
 
   /* 
   * 
-  *
+  * return format: 
   * 
   * return [(rank), (7d), (30d)]
+  * 
   */
 
   getRankDiscord(id:number){

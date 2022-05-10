@@ -45,12 +45,12 @@ main{
 }
 
 footer{
-    height: 35vh;
+    margin-top: 2em;
+    height: 30vh;
     background-color: whitesmoke;
     
     grid-column-start: 1;
     grid-column-end: 4;
-    border: 1px solid;
 }
 
 .aside-cards {

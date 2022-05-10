@@ -29,7 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    
+
+    //catch id passed through the route
     this.subscription1 = this.router.events.subscribe(event => {
       if (event instanceof RoutesRecognized) {
         try{
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
           this.id = route!.data['id'] || '';
           this.page_id = Number(this.id); 
           this.service_id.setId(this.page_id);
-          console.log('app comp* Id passed through URL:', this.id);
+          //console.log('app comp* Id passed through URL:', this.id);
         }
         catch(e){}
       

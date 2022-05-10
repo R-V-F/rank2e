@@ -47,7 +47,7 @@ id_list = df['pair_ID'].tolist()
 
 now = datetime.now()
 ##date_time = now.strftime("%m/%d/%Y")
-yesterday = datetime.today() - timedelta(days=2)
+yesterday = datetime.today() - timedelta(days=1)
 date_time = yesterday.strftime("%m/%d/%Y")
 #### ^^^^ in desperate times (i fuk up)
 

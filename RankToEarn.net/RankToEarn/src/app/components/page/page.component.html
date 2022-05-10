@@ -11,106 +11,103 @@
             <div class="ranks">
                 <span *ngIf="rank_discord_returns[0] > 0">#{{rank_discord_returns[0]}} Discord.</span>
                 <br *ngIf="rank_discord_returns[0] > 0">
-                <span *ngIf="rank_discord_returns[0] > 0">#{{rank_twitter_returns[0]}} Twitter.</span>
+                <span *ngIf="rank_twitter_returns[0] > 0">#{{rank_twitter_returns[0]}} Twitter.</span>
+                <br *ngIf="rank_twitter_returns[0] > 0">
+                <br *ngIf="genres != 'none'">
+                <span *ngIf="genres != 'none'">Genres: {{genres}}</span>
             </div>
         </div>
-        <div class="socials-h">
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.twitter != 'none'">
-                <a [href]="socials.twitter"><img class="social-icon" src="https://toppng.com/uploads/preview/line-clipart-computer-icons-social-media-facebook-small-transparent-background-twitter-ico-11562914414jbo8db7bj4.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.discord != 'none'">
-                <a [href]="socials.discord"><img class="social-icon" src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-icone.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.home_page != 'none'">
-                <a [href]="socials.home_page"><img class="social-icon" src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.telegram != 'none'">
-                <a [href]="socials.telegram"><img class="social-icon" src="https://e7.pngegg.com/pngimages/419/837/png-clipart-telegram-icon-telegram-logo-computer-icons-telegram-blue-angle.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.github != 'none'">
-                <a [href]="socials.github"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.youtube != 'none'">
-                <a [href]="socials.youtube"><img class="social-icon" src="https://w7.pngwing.com/pngs/936/468/png-transparent-youtube-logo-youtube-logo-computer-icons-subscribe-angle-rectangle-airplane.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.twitch != 'none'">
-                <a [href]="socials.twitch"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.facebook != 'none'">
-                <a [href]="socials.facebook"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124010.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.instagram != 'none'">
-                <a [href]="socials.instagram"><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.reddit != 'none'">
-                <a [href]="socials.reddit"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384067.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.medium != 'none'">
-                <a [href]="socials.medium"><img class="social-icon" src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.gitbook != 'none'">
-                <a [href]="socials.gitbook"><img class="social-icon" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/gitbook_logo_icon_168173.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.bitcointalk != 'none'">
-                <a [href]="socials.bitcointalk"><img class="social-icon" src="https://w7.pngwing.com/pngs/800/18/png-transparent-bitcointalk-computer-icons-cryptocurrency-ethereum-bitcoin-text-trademark-logo.png"></a>
-            </button>
-            <button class="soc-div button mat-elevation-z1" *ngIf="socials.steam != 'none'">
-                <a [href]="socials.steam"><img class="social-icon" src="https://gartic.com.br/imgs/mural/sn/snoopybits/steam-logo.png"></a>
-            </button>
-
-
-
-
-        </div>
-        <span class="fade-effect1"></span>
+    </div>
+    <div class="socials-h">
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.twitter != 'none'">
+            <a [href]="socials.twitter"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.discord != 'none'">
+            <a [href]="socials.discord"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.home_page != 'none'">
+            <a [href]="socials.home_page"><img class="social-icon" src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.telegram != 'none'">
+            <a [href]="socials.telegram"><img class="social-icon" src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/telegram-512.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.github != 'none'">
+            <a [href]="socials.github"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.youtube != 'none'">
+            <a [href]="socials.youtube"><img class="social-icon" src="https://unaids.org.br/wp-content/uploads/2015/06/YouTube-icon-full_color.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.twitch != 'none'">
+            <a [href]="socials.twitch"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.facebook != 'none'">
+            <a [href]="socials.facebook"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124010.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.instagram != 'none'">
+            <a [href]="socials.instagram"><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.reddit != 'none'">
+            <a [href]="socials.reddit"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384067.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.medium != 'none'">
+            <a [href]="socials.medium"><img class="social-icon" src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.gitbook != 'none'">
+            <a [href]="socials.gitbook"><img class="social-icon" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/gitbook_logo_icon_168173.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.bitcointalk != 'none'">
+            <a [href]="socials.bitcointalk"><img class="social-icon" src="https://w7.pngwing.com/pngs/800/18/png-transparent-bitcointalk-computer-icons-cryptocurrency-ethereum-bitcoin-text-trademark-logo.png"></a>
+        </button>
+        <button class="soc-div button mat-elevation-z1" *ngIf="socials.steam != 'none'">
+            <a [href]="socials.steam"><img class="social-icon" src="https://gartic.com.br/imgs/mural/sn/snoopybits/steam-logo.png"></a>
+        </button>
     </div>
 
     <div class="page-info">
-        <div class="info-left-container mat-elevation-z1">
+        <div class="info-left-container">
             <div class="info-left-left">
                 <br>
                 <br>
                 <br>
                 <b>Name:</b> {{name}} <br> <span class="fade-effect-info"></span> <br>
-                <b>Status:</b> Casado <br> <span class="fade-effect-info"></span> <br>
-                <b>Blockchains:</b> Muitas  <br> <span class="fade-effect-info"></span> <br>
-                <b>Devices:</b> Todos <span class="fade-effect-info"></span>
+                <b>Status:</b> -- <br> <span class="fade-effect-info"></span> <br>
+                <b>Blockchains:</b> {{blockchains}}  <br> <span class="fade-effect-info"></span> <br>
+                <b>Devices:</b> {{devices}} <span class="fade-effect-info"></span>
             </div>
             <div class="info-left-right">
                 <br>
                 <br>
                 <br>
-                <b>Discord 7d: </b> <span *ngIf="rank_discord_returns[1] > -99">{{rank_discord_returns[1]}}</span>
+                <b>Discord 7d: </b> <span *ngIf="rank_discord_returns[1] > -99"> {{rank_discord_returns[1]}} %</span>
                                     <span *ngIf="rank_discord_returns[1] <= -99"> --</span>
                                     <br><span class="fade-effect-info"></span><br>
-                <b>Discord 30d:</b> <span *ngIf="rank_discord_returns[2] > -99">{{rank_discord_returns[2]}}</span>
+                <b>Discord 30d:</b> <span *ngIf="rank_discord_returns[2] > -99"> {{rank_discord_returns[2]}} %</span>
                                     <span *ngIf="rank_discord_returns[2] <= -99"> --</span>
                                     <br><span class="fade-effect-info"></span><br>
-                <b>Twitter 7d:</b>  <span *ngIf="rank_twitter_returns[1] > -99"> {{rank_twitter_returns[1]}}</span>
+                <b>Twitter 7d:</b>  <span *ngIf="rank_twitter_returns[1] > -99"> {{rank_twitter_returns[1]}} %</span>
                                     <span *ngIf="rank_twitter_returns[1] <= -99"> --</span>
                                     <br><span class="fade-effect-info"></span><br>
-                <b>Twitter 30d:</b> <span *ngIf="rank_twitter_returns[2] > -99">{{rank_twitter_returns[2]}}</span>
+                <b>Twitter 30d:</b> <span *ngIf="rank_twitter_returns[2] > -99"> {{rank_twitter_returns[2]}} %</span>
                                     <span *ngIf="rank_twitter_returns[2] <= -99"> --</span>
                                     <span class="fade-effect-info"></span>
             </div>
         </div>
-        <div class="info-right-container mat-elevation-z1">
-            <div class="grade-div mat-elevation-z1">
-                <img class="grade-img" src="./assets/turboflame.jpg" alt="">
-            </div>
-            <div class="grade-report">
-                <b>Growth: </b> <span class="grade-points-span" *ngFor="let pipi of grade_array_4">
+    </div>
+
+    <div class="page-metrics">
+        <div class="grade-div mat-elevation-z1">
+            <img class="grade-img" src="./assets/turboflame.jpg" alt="">
+        </div>
+        <div class="grade-report">
+            <b>Growth: </b> <span class="grade-points-span" *ngFor="let pipi of grade_array_4">
+                                <img class="grade-points-img" src="./assets/grade_flame.png" alt="">
+                            </span>
+                            <br><span class="fade-effect-info"></span> <br>
+            <b>Engagement: </b> <span class="grade-points-span" *ngFor="let pipi of grade_array_5">
                                     <img class="grade-points-img" src="./assets/grade_flame.png" alt="">
                                 </span>
-                                <br><span class="fade-effect-info"></span> <br>
-                <b>Engagement: </b> <span class="grade-points-span" *ngFor="let pipi of grade_array_5">
-                                        <img class="grade-points-img" src="./assets/grade_flame.png" alt="">
-                                    </span>
-                                <span class="fade-effect-info"></span>
-            </div>
-
+                            <span class="fade-effect-info"></span>
         </div>
-
     </div>
 
     <div class="page-graph">
@@ -120,6 +117,19 @@
         <div class="right mat-elevation-z1">
             <canvas id='myTwitterCanvas'></canvas>
         </div>
+    </div>
+
+    <div class="page-gallery">
+        <span *ngIf="img_array.length > 0">
+
+            <a class="prev" (click)="changePhoto(-1)">&#10094;</a>
+            <a class="next" (click)="changePhoto(+1)">&#10095;</a>
+            <span class="gallery-count">{{ind_center+1}}/{{img_array.length}}</span>
+            <img class="center-img"  [src]="img_array[ind_center]" alt="">
+            
+        </span>
+        <!-- 'invisible walls' solution -->
+
     </div>
 
 </div>
