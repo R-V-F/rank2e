@@ -3,9 +3,10 @@ Project Diagram (updated to include twitter stuff)
 ![project_diagram_updated](https://user-images.githubusercontent.com/100313927/167691925-71006de7-7f9a-466d-86c3-1d603958cad9.png)
 
 ##TODO:
-* Make tests
+* Write tests
+* Reduce bundle size
 * Adapt to mobile
-* Finish gallery (add 'mini' images)
+* Finish gallery (add 'mini' images). Edit: Not working on live version, only on localhost - img_path cannot be set.
 * Fix bug when using 'go back' btn on browser when page > 1
 * Implement f(adress) => graph function
 * Automate pagination (currently it's manually set for 17)
