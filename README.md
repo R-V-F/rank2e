@@ -4,9 +4,9 @@ Project Diagram (updated to include twitter stuff)
 
 ##TODO:
 * Write tests
-* Reduce bundle size
+* Lower bundle size
 * Adapt to mobile
-* Finish gallery (add 'mini' images). Edit: Not working on live version, only on localhost - img_path cannot be set.
+* Finish gallery (add 'mini' images). Edit: Not working on live version, only on localhost - changes how img_path is set.
 * Fix bug when using 'go back' btn on browser when page > 1
 * Implement f(adress) => graph function
 * Automate pagination (currently it's manually set for 17)
