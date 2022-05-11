@@ -1,4 +1,4 @@
-# rank2e
+# rank2e (https://rank2earn.web.app/)
 Project Diagram (updated to include twitter stuff)
 ![project_diagram_updated](https://user-images.githubusercontent.com/100313927/167691925-71006de7-7f9a-466d-86c3-1d603958cad9.png)
 
