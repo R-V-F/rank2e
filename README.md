@@ -1,4 +1,4 @@
-<h1> <span class="grey">&#60;</span> Notes <span class="grey">/></span> </h1>
+<h1>Notes</h1>
 <p>
     Created using: <span class="orange">HTML/CSS</span>, <span class="orange">Angular</span>,
         <span class="orange">TypeScript</span>, <span class="orange">Firebase</span>, <span class="orange">Python</span>,
@@ -20,7 +20,7 @@
 
 <h1> <span class="grey">></span> Project Structure</h1>
 
-    ![r2e_project_structure](https://user-images.githubusercontent.com/100313927/180470306-4ffb1a64-8900-4ea6-af46-33694e7871fe.png)
+![r2e_project_structure](https://user-images.githubusercontent.com/100313927/180470306-4ffb1a64-8900-4ea6-af46-33694e7871fe.png)
 
 
 <h1> <span class="grey">></span> Challenges</h1>
@@ -30,7 +30,7 @@
 </p>
 <h2>Organizing data</h2>
     
-    ![index_table](https://user-images.githubusercontent.com/100313927/180470390-34a49854-f860-492a-91d4-b2e1166d957a.png)
+![index_table](https://user-images.githubusercontent.com/100313927/180470390-34a49854-f860-492a-91d4-b2e1166d957a.png)
 
   
 <p>
@@ -43,19 +43,16 @@
     <br>
     <br>
 </p>
-    
-    ![table_example](https://user-images.githubusercontent.com/100313927/180470501-7d8a1e6a-4731-47e7-85f2-79e4d7950664.png)
 
-    
-    <br>
-    <br>
+![table_example](https://user-images.githubusercontent.com/100313927/180470501-7d8a1e6a-4731-47e7-85f2-79e4d7950664.png)
+
 <h2>Data entry</h2>
 <p>
     In order to feed the database new projects to keep track of, I first write the content that will go into the 'index table' to
     a 'add_file.xlsx'.
 </p>
     
-    ![add_file](https://user-images.githubusercontent.com/100313927/180470547-9122ab39-a3e6-4d5f-b310-fa9abf7cc5c7.png)
+![add_file](https://user-images.githubusercontent.com/100313927/180470547-9122ab39-a3e6-4d5f-b310-fa9abf7cc5c7.png)
 
     
     <br>
@@ -65,7 +62,7 @@
 </p>
     <br>
     
-    ![add_db](https://user-images.githubusercontent.com/100313927/180470597-8ee07cfb-90fa-418f-8fe5-b83b595d4cc8.png)
+![add_db](https://user-images.githubusercontent.com/100313927/180470597-8ee07cfb-90fa-418f-8fe5-b83b595d4cc8.png)
 
     
 
